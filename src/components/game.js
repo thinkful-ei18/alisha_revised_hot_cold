@@ -17,15 +17,23 @@ export default class Game extends Component {
         }
     }
 
-    guess(e) {
+    currentGuess(e) {
+        console.log('made it to guess!')
         // console.log(e);
         this.setState({guess:e})
     }
 
-    updateGuessNumber() {
-        this.setState({guessNumber: this.state.guessList.length})
+    updateGuessList() {
+        console.log('made it to ugn')
 
-        this.setState({guessList: this.state.guessList.concat(this.state.guess)})
+        this.setState({guessList: this.state.guessList.concat(this.state.guess), 
+        guessNumber: this.state.guessList.length }
+    )
+
+        // this.setState({ guessNumber: this.state.guessNumber + 1 })
+
+        this.setState()
+
     }
 
 
@@ -35,8 +43,8 @@ export default class Game extends Component {
                 <Header />
 
                 <GuessSection feedback="Make your guess!" 
-                currentGuess={e => this.guess(e.target.value)}
-                count={() => this.updateGuessNumber()} />
+                currentGuess={e => this.currentGuess(e.target.value)}
+                updateGuessList={() => this.updateGuessList()} />
 
                 <GuessCount count={this.state.guessNumber}/>
 

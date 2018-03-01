@@ -6,7 +6,7 @@ export default function GuessForm(props) {
     /*
     props:
         -currentGuess2={e => props.currentGuess(e)}
-        -count2={() => this.updateGuessNumber()}
+        -updateGuessList2={() => props.updateGuessList()}
     */
     return (
         <form>
@@ -18,7 +18,7 @@ export default function GuessForm(props) {
             <input type="submit" id="guessButton" className="button" name="submit" value="Guess"
             onClick={e => {
                 e.preventDefault();
-                props.count2();
+                props.updateGuessList2();
                 }}/>
         </form>
     );

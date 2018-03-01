@@ -8,8 +8,8 @@ export default function GuessSection(props) {
 /*
   props:
     -feedback="Make your guess!"
-    -currentGuess={e => this.guess(e.target.value)}
-    -count={() => this.updateGuessNumber()}
+    -currentGuess={e => this.currentGuess(e.target.value)}
+    -updateGuessList={() => this.updateGuessList()}
 */
     
     return (
@@ -17,7 +17,7 @@ export default function GuessSection(props) {
             <h2 id="feedback">{props.feedback}</h2>
 
             <GuessForm currentGuess2={e => props.currentGuess(e)}
-            count2={() => props.count()}/>
+          updateGuessList2={() => props.updateGuessList()}/>
 
         </section>
     );
