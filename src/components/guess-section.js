@@ -16,8 +16,8 @@ export default function GuessSection(props) {
         <section>
             <h2 id="feedback">{props.feedback}</h2>
 
-            <GuessForm currentGuess2={e => props.currentGuess(e)}
-          updateGuessList2={() => props.updateGuessList()}/>
+            <GuessForm currentGuess2={guess => props.currentGuess(guess)}
+          updateGuessList2={(guessList) => props.updateGuessList(guessList)}/>
 
         </section>
     );
