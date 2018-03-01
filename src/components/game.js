@@ -12,7 +12,7 @@ export default class Game extends Component {
         this.state= {
             guess: '',
             guessList: [],
-            guessNumber:'',
+            guessNumber: 0,
             responses:[]
         }
     }
@@ -22,13 +22,25 @@ export default class Game extends Component {
         this.setState({guess:e})
     }
 
+    updateGuessNumber() {
+        this.setState({guessNumber: this.state.guessList.length})
+
+        this.setState({guessList: this.state.guessList.concat(this.state.guess)})
+    }
+
+
     render() {
         return (
             <div>
                 <Header />
-                <GuessSection feedback="Make your guess!" currentGuess={e => this.guess(e.target.value)}/>
-                <GuessCount count={3} />
-                <GuessList guesses={[10, 15, 25]} />
+
+                <GuessSection feedback="Make your guess!" 
+                currentGuess={e => this.guess(e.target.value)}
+                count={() => this.updateGuessNumber()} />
+
+                <GuessCount count={this.state.guessNumber}/>
+
+                <GuessList guesses={this.state.guessList} />
             </div>
         );
     }
