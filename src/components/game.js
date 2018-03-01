@@ -18,34 +18,30 @@ export default class Game extends Component {
     }
 
     currentGuess(e) {
-        console.log('made it to guess!')
         // console.log(e);
         this.setState({guess:e})
     }
 
     updateGuessList() {
-        console.log('made it to ugn')
 
-        // this.setState({
-        //     guessList: this.state.guessList.concat(this.state.guess)})
-        // this.updateGuessNumber();
-        console.log('guessList:', this.state.guessList);
+        this.setState({
+            guessList: [...this.state.guessList, this.state.guess],
+            guessNumber: this.state.guessNumber + 1
+        })
 
-        this.setState({ 
-            guessList: [...this.state.guessList, this.state.guess], 
-            guessNumber: this.state.guessList.length }
-        )
+        // this.setState({ 
+        //     guessList: [...this.state.guessList, this.state.guess], 
+        //     guessNumber: this.state.guessList.length }
+        // )
 
-        // console.log('concat',this.state.guessList.concat(this.state.guess))
-        console.log('guess:', this.state.guess);
-        console.log('guessList:',this.state.guessList);
-        console.log('guessList.length:',this.state.guessList.length);
-        // this.setState({ guessNumber: this.state.guessNumber + 1 })
+        // this.setState({ 
+        //     guessList: [...this.state.guessList, this.state.guess], 
+        //     guessNumber: this.state.guessList.concat(this.state.guess) })
+
+        // console.log('guess:', this.state.guess);
+        // console.log('guessList:',this.state.guessList);
+        // console.log('guessList.length:',this.state.guessList.length);
     }
-
-    // updateGuessNumber() {
-    //     this.setState({ guessNumber: this.state.guessList.length})
-    // }
 
 
     render() {
