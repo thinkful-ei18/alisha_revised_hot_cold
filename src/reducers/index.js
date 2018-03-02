@@ -31,17 +31,14 @@ export const gameReducer = (state=initialState, action) => {
     
     return {
       ...state,
-      guessList: [...state.guessList, action.guess],
+      guessList: [
+        ...state.guessList, 
+        action.guess
+        ],
       response
     }
   }
 
-  // if (action.type === actions.CHANGE_INSTRUCTIONS) {
-  //   return {
-  //     ...state,
-  //     answer: action.answer
-  //   }
-  // }
 
   if (action.type === actions.NEW_GAME) {
     return {
@@ -53,5 +50,11 @@ export const gameReducer = (state=initialState, action) => {
   }
 
 
+  if (action.type === actions.CHANGE_INSTRUCTIONS) {
+    return {
+      ...state,
+      answer: action.answer
+    }
+  }
 
 }
