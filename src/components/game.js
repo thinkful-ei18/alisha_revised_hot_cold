@@ -4,6 +4,7 @@ import Header from './header';
 import GuessSection from './guess-section';
 import GuessCount  from './guess-count';
 import GuessList from './guess-list';
+import InfoModal from './info-modal';
 
 
 export default class Game extends Component {
@@ -14,7 +15,8 @@ export default class Game extends Component {
       answer: Math.floor(Math.random() * Math.floor(100)),
       guess: '',
       guessList: [],
-      response: 'Make your guess!'
+      response: 'Make your guess!',
+      instructions: false
     }
   }
 
@@ -52,12 +54,30 @@ export default class Game extends Component {
       })
   }
 
+  noInstructions() {
+    this.setState({
+      instructions: true
+    })
+  }
+
+  showGame() {
+    this.setState({
+      instructions: false
+    })
+  }
+
 
   render() {
+
+    if(this.state.instructions) {
+      return <InfoModal showGame={() => this.showGame()}/>
+    }
+
     return (
       <div>
         <Header 
-          restart={() => this.restartGame()} 
+          restart={() => this.restartGame()}
+          noInstructions={() => this.noInstructions()} 
         />
 
         <GuessSection 

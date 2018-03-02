@@ -2,10 +2,12 @@ import React from 'react';
 
 import './top-nav.css';
 
+
 export default function TopNav(props) {
   /**
    props:
     - restart2={() => props.restart()}
+    - noInstructions2={() => this.noInstructions()}
    */
 
   return (
@@ -15,6 +17,7 @@ export default function TopNav(props) {
           <a 
             className="what" 
             href="#"
+            onClick={() => props.noInstructions2()}
           >
             What?
           </a>
