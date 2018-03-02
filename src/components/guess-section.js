@@ -8,14 +8,14 @@ import './guess-section.css';
 export default function GuessSection(props) {
 /*
   props:
-    - feedback="Make your guess!"
+    - response={this.state.response}
     - currentGuess={ guess => this.currentGuess(guess)}
     - updateGuessList={() => this.updateGuessList(guessList)}
 */
     
   return (
     <section>
-      <h2 id="feedback">{props.feedback}</h2>
+      <h2 id="feedback">{props.response}</h2>
 
       <GuessForm 
         currentGuess2={ guess => props.currentGuess(guess)}

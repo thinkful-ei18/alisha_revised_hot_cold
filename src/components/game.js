@@ -11,14 +11,31 @@ export default class Game extends Component {
   constructor() {
     super();
     this.state= {
+      answer: Math.floor(Math.random() * Math.floor(100)),
       guess: '',
       guessList: [],
-      responses:[]
+      response: 'Make your guess!'
     }
   }
 
   currentGuess(guess) {
-    this.setState({ guess })
+  
+    let distance= Math.abs(this.state.answer - guess);
+
+    let response;
+    if (distance > 30) {
+      response = 'You\'re freezing!'
+    } else if (distance <= 30 && distance > 15) {
+      response = 'You\'re cold.'
+    } else if (distance <= 15 && distance > 5) {
+      response = 'You\'re warm.'
+    } else if (distance <= 5 && distance > 1) {
+      response = 'You\'re hot!'
+    } else {
+      response = 'That\'s the right answer!'
+    }
+
+    this.setState({ guess, response })
   }
 
   updateGuessList(guessList) {
@@ -28,14 +45,19 @@ export default class Game extends Component {
     )
   }
 
+  updateFeedback(){
+    console.log("Hooray!");
+  }
+
 
   render() {
+
     return (
       <div>
         <Header />
 
         <GuessSection 
-          feedback="Make your guess!" 
+          response={this.state.response}
           currentGuess={ guess => this.currentGuess(guess)}
           updateGuessList={ guessList => this.updateGuessList(guessList)}
         />
