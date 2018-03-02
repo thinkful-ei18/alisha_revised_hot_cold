@@ -6,8 +6,7 @@ import * as actions from '../actions';
 const initialState = {
   answer: '',
   guessList: [],
-  response: 'Make your guess!',
-  // instructions: false
+  response: 'Make your guess!'
 }
 
 
@@ -46,14 +45,6 @@ export const gameReducer = (state=initialState, action) => {
       answer: action.answer,
       guessList: [],
       response: 'Make your guess!'
-    }
-  }
-
-
-  if (action.type === actions.CHANGE_INSTRUCTIONS) {
-    return {
-      ...state,
-      answer: action.answer
     }
   }
 

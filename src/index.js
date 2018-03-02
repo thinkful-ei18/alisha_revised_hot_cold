@@ -31,6 +31,7 @@ import './index.css';
 // simulated game
 store.dispatch(actions.createNewGame(Math.floor(Math.random() * Math.floor(100))))
 console.log(store.getState());
+
 store.dispatch(actions.currentGuess(10));
 console.log(store.getState());
 store.dispatch(actions.currentGuess(20));
@@ -49,6 +50,7 @@ store.dispatch(actions.currentGuess(80));
 console.log(store.getState());
 store.dispatch(actions.currentGuess(90));
 console.log(store.getState());
+
 store.dispatch(actions.createNewGame(Math.floor(Math.random() * Math.floor(100))))
 console.log(store.getState());
 
