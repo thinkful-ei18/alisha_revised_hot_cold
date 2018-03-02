@@ -15,9 +15,25 @@ const initialState = {
 export const gameReducer = (state=initialState, action) => {
 
   if (action.type === actions.CURRENT_GUESS) {
+    let distance = Math.abs(state.answer - action.guess);
+
+    let response;
+    if (distance > 30) {
+      response = 'You\'re freezing!'
+    } else if (distance <= 30 && distance > 15) {
+      response = 'You\'re cold.'
+    } else if (distance <= 15 && distance > 5) {
+      response = 'You\'re warm.'
+    } else if (distance <= 5 && distance > 1) {
+      response = 'You\'re hot!'
+    } else {
+      response = 'That\'s the right answer!'
+    }
+    
     return {
       ...state,
-      guessList: [...state.guessList, action.guess]
+      guessList: [...state.guessList, action.guess],
+      response
     }
   }
 
