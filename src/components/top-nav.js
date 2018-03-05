@@ -6,7 +6,7 @@ import './top-nav.css';
 export default function TopNav(props) {
   /**
    props:
-    - restart2={() => props.restart()}
+    - newGame2={() => props.newGame()}
     - noInstructions2={() => this.noInstructions()}
    */
 
@@ -27,7 +27,7 @@ export default function TopNav(props) {
           <a 
             className="new" 
             href="#"
-            onClick={() => props.restart2()}
+            onClick={() => props.newGame2()}
           >
             + New Game
           </a>

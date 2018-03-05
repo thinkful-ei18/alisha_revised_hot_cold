@@ -9,14 +9,14 @@ import './header.css';
 export default function Header(props) {
   /**
    props:
-    - restart={() => this.restartGame()}
+    - newGame={() => props.dispatch(actions.createNewGame())}
     - noInstructions={() => this.noInstructions()}
    */
 
   return (
     <header>
       <TopNav 
-        restart2={() => props.restart()}
+        newGame2={() => props.newGame()}
         noInstructions2={() => props.noInstructions()}
       />
       {/* <InfoModal /> */}

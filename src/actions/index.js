@@ -10,7 +10,6 @@ export const currentGuess= guess => ({
 })
 
 export const NEW_GAME = 'NEW_GAME'
-export const createNewGame = answer => ({
-  type: NEW_GAME,
-  answer
+export const createNewGame = () => ({
+  type: NEW_GAME
 })

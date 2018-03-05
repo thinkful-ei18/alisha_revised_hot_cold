@@ -95,6 +95,9 @@ export function Game(props) {
           restart={() => this.restartGame()}
           noInstructions={() => noInstructions()} 
         /> */}
+        <Header
+          newGame={() => props.dispatch(actions.createNewGame())}
+        />
 
         <GuessSection
           response={props.response}

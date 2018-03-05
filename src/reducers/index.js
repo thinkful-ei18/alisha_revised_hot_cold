@@ -41,8 +41,7 @@ export const gameReducer = (state=initialState, action) => {
 
   if (action.type === actions.NEW_GAME) {
     return {
-      ...state,
-      answer: action.answer,
+      answer: Math.floor(Math.random() * Math.floor(100)),
       guessList: [],
       response: 'Make your guess!'
     }
