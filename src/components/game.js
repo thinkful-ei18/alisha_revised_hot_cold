@@ -101,11 +101,11 @@ export function Game(props) {
           currentGuess={guess => props.dispatch(actions.currentGuess(guess))}
         />
 
-        {/* <GuessCount 
-          count={() =>{}}
+        <GuessCount 
+          count={props.guessList.length}
         />
 
-        <GuessList 
+        {/* <GuessList 
           guesses={() => {}} 
         /> */}
 
