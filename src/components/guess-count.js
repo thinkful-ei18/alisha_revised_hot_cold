@@ -4,7 +4,7 @@ import './guess-count.css';
 export default function GuessCount(props) {
     /*
     props:
-        - count={this.state.guessNumber}
+        - count={props.guessList.length}
     */
 
     return (
