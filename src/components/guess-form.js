@@ -16,8 +16,8 @@ export default class GuessForm extends Component {
       <form 
         onSubmit={(e) => { 
         e.preventDefault(); 
-        this.props.currentGuess2(this.inputBox.value); 
-        this.props.updateGuessList2(this.inputBox.value);
+        this.props.currentGuess2(e.target.value); 
+        {/* this.props.updateGuessList2(this.inputBox.value); */}
         this.inputBox.value = '';
         }}>
 

@@ -11,6 +11,8 @@ export default function GuessSection(props) {
     - response={this.state.response}
     - currentGuess={ guess => this.currentGuess(guess)}
     - updateGuessList={() => this.updateGuessList(guessList)}
+
+    - onChange={e => props.dispatch(actions.currentGuess(e.target.value))}
 */
     
   return (
@@ -19,8 +21,12 @@ export default function GuessSection(props) {
 
       <GuessForm 
         currentGuess2={ guess => props.currentGuess(guess)}
-        updateGuessList2={ guessList => props.updateGuessList(guessList)}
+        
       />
+
+      {/* <GuessForm
+        updateGuessList={props.onChange()}
+      /> */}
 
     </section>
   );

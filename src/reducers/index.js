@@ -4,7 +4,7 @@
 import * as actions from '../actions';
 
 const initialState = {
-  answer: '',
+  answer: Math.floor(Math.random() * Math.floor(100)),
   guessList: [],
   response: 'Make your guess!'
 }
@@ -47,5 +47,7 @@ export const gameReducer = (state=initialState, action) => {
       response: 'Make your guess!'
     }
   }
+
+  return state;
 
 }
