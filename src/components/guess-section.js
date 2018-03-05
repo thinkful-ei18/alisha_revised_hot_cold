@@ -8,11 +8,8 @@ import './guess-section.css';
 export default function GuessSection(props) {
 /*
   props:
-    - response={this.state.response}
-    - currentGuess={ guess => this.currentGuess(guess)}
-    - updateGuessList={() => this.updateGuessList(guessList)}
-
-    - onChange={e => props.dispatch(actions.currentGuess(e.target.value))}
+    - response={props.response}
+    - currentGuess={guess => props.dispatch(actions.currentGuess(guess))}
 */
     
   return (
@@ -21,12 +18,7 @@ export default function GuessSection(props) {
 
       <GuessForm 
         currentGuess2={ guess => props.currentGuess(guess)}
-        
       />
-
-      {/* <GuessForm
-        updateGuessList={props.onChange()}
-      /> */}
 
     </section>
   );

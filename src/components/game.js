@@ -96,23 +96,17 @@ export function Game(props) {
           noInstructions={() => noInstructions()} 
         /> */}
 
-        {/* <GuessSection 
-          response={this.state.response}
-          currentGuess={ guess => this.currentGuess(guess)}
-          updateGuessList={ guessList => this.updateGuessList(guessList)}
-        /> */}
-
         <GuessSection
           response={props.response}
           currentGuess={guess => props.dispatch(actions.currentGuess(guess))}
         />
 
         {/* <GuessCount 
-          count={this.state.guessList.length}
+          count={() =>{}}
         />
 
         <GuessList 
-          guesses={this.state.guessList} 
+          guesses={() => {}} 
         /> */}
 
       </div>

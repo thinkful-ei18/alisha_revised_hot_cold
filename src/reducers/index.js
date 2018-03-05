@@ -22,7 +22,7 @@ export const gameReducer = (state=initialState, action) => {
       response = 'You\'re cold.'
     } else if (distance <= 15 && distance > 5) {
       response = 'You\'re warm.'
-    } else if (distance <= 5 && distance > 1) {
+    } else if (distance <= 5 && distance >= 1) {
       response = 'You\'re hot!'
     } else {
       response = 'That\'s the right answer!'

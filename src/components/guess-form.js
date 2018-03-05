@@ -6,8 +6,7 @@ import './guess-form.css';
 export default class GuessForm extends Component {
     /*
     props:
-        - currentGuess2={guess => props.currentGuess(guess)}
-        - updateGuessList2={ guessList => props.updateGuessList(guessList)}
+        - currentGuess2={ guess => props.currentGuess(guess)}
     */
 
   render() {
@@ -16,8 +15,7 @@ export default class GuessForm extends Component {
       <form 
         onSubmit={(e) => { 
         e.preventDefault(); 
-        this.props.currentGuess2(e.target.value); 
-        {/* this.props.updateGuessList2(this.inputBox.value); */}
+        this.props.currentGuess2(this.inputBox.value); 
         this.inputBox.value = '';
         }}>
 
