@@ -1,4 +1,4 @@
-import React /*, {Component}*/ from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import Header from './header';
@@ -39,7 +39,13 @@ export function Game(props) {
 
       <GuessSection
         response={props.response}
-        currentGuess={guess => props.dispatch(actions.currentGuess(guess))}
+        currentGuess={guess => {
+          if(guess>100) {
+            alert('That number is greater than 100!')
+          } else {
+          props.dispatch(actions.currentGuess(guess))
+          }
+          }}
       />
 
       <GuessCount 
