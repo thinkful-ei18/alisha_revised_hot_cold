@@ -1,59 +1,14 @@
 
-/* ======= REACT ======= */
-// import './reset.css';
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-
-// import './reset.css';
-// import './index.css';
-
-// import Game from './components/game';
-
-// ReactDOM.render(
-//     <Game />,
-//     document.getElementById('root')
-// );
-
-
-
-/* ======= REDUX ======= */
+/* ======= REACT-REDUX SETUP======= */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
 import Game from './components/game';
 import store from './store';
-import * as actions from './actions';
 
+import './reset.css';
 import './index.css';
-
-
-// simulated game
-store.dispatch(actions.createNewGame(Math.floor(Math.random() * Math.floor(100))))
-console.log(store.getState());
-
-store.dispatch(actions.currentGuess(10));
-console.log(store.getState());
-store.dispatch(actions.currentGuess(20));
-console.log(store.getState());
-store.dispatch(actions.currentGuess(30));
-console.log(store.getState());
-store.dispatch(actions.currentGuess(40));
-console.log(store.getState());
-store.dispatch(actions.currentGuess(50));
-console.log(store.getState());
-store.dispatch(actions.currentGuess(60));
-console.log(store.getState());
-store.dispatch(actions.currentGuess(70));
-console.log(store.getState());
-store.dispatch(actions.currentGuess(80));
-console.log(store.getState());
-store.dispatch(actions.currentGuess(90));
-console.log(store.getState());
-
-store.dispatch(actions.createNewGame(Math.floor(Math.random() * Math.floor(100))))
-console.log(store.getState());
-
 
 
 ReactDOM.render(
@@ -62,3 +17,34 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root')
 );
+
+
+
+/* ======= SIMULATED GAME  ======= */
+
+// import * as actions from './actions';
+
+// store.dispatch(actions.createNewGame(Math.floor(Math.random() * Math.floor(100))))
+// console.log(store.getState());
+
+// store.dispatch(actions.currentGuess(10));
+// console.log(store.getState());
+// store.dispatch(actions.currentGuess(20));
+// console.log(store.getState());
+// store.dispatch(actions.currentGuess(30));
+// console.log(store.getState());
+// store.dispatch(actions.currentGuess(40));
+// console.log(store.getState());
+// store.dispatch(actions.currentGuess(50));
+// console.log(store.getState());
+// store.dispatch(actions.currentGuess(60));
+// console.log(store.getState());
+// store.dispatch(actions.currentGuess(70));
+// console.log(store.getState());
+// store.dispatch(actions.currentGuess(80));
+// console.log(store.getState());
+// store.dispatch(actions.currentGuess(90));
+// console.log(store.getState());
+
+// store.dispatch(actions.createNewGame(Math.floor(Math.random() * Math.floor(100))))
+// console.log(store.getState());
