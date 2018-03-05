@@ -5,7 +5,7 @@ import Header from './header';
 import GuessSection from './guess-section';
 import GuessCount  from './guess-count';
 import GuessList from './guess-list';
-// import InfoModal from './info-modal';
+import InfoModal from './info-modal';
 import * as actions from '../actions';
 
 
@@ -65,15 +65,16 @@ export function Game(props) {
       dispatch: () => {}
       answer: '',
       guessList: [],
-      response: 'Make your guess!'
+      response: 'Make your guess!',
+      instructions: false
     } 
 */
 
-  function noInstructions() {
-    this.setState({
-      instructions: true
-    })
-  }
+  // function noInstructions() {
+  //   this.setState({
+  //     instructions: true
+  //   })
+  // }
 
   // function showGame() {
   //   this.setState({
@@ -81,22 +82,21 @@ export function Game(props) {
   //   })
   // }
 
+  console.log('store', props)
+  console.log('answer: ',props.answer);
+  console.log('guess: ', props.guessList)
+  console.log('instructions: ', props.instructions)
 
- console.log('answer: ',props.answer);
- console.log('guess: ', props.guessList)
-
-    // if(this.state.instructions) {
-    //   return <InfoModal showGame={() => showGame()}/>
-    // }
+    if(props.instructions) {
+      return <InfoModal showGame={() => {}}/>
+    }
 
     return (
       <div>
-        {/* <Header 
-          restart={() => this.restartGame()}
-          noInstructions={() => noInstructions()} 
-        /> */}
+
         <Header
           newGame={() => props.dispatch(actions.createNewGame())}
+          showInstructions={() => props.dispatch(actions.showInstructions())}
         />
 
         <GuessSection
@@ -121,12 +121,9 @@ const mapStateToProps = (state) => ({
   // receives initialState obj from the reducer
   answer: state.answer,
   guessList: state.guessList,
-  response: state.response
+  response: state.response,
+  instructions: state.instructions
 })
-
-// function mapStateToProps(state) {
-//   console.log('state: ', state);
-// }
 
 export default connect(mapStateToProps)(Game);
 

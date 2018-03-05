@@ -7,7 +7,7 @@ export default function TopNav(props) {
   /**
    props:
     - newGame2={() => props.newGame()}
-    - noInstructions2={() => this.noInstructions()}
+    - showInstructions2={() => props.showInstructions()}
    */
 
   return (
@@ -17,7 +17,7 @@ export default function TopNav(props) {
           <a 
             className="what" 
             href="#"
-            onClick={() => props.noInstructions2()}
+            onClick={() => props.showInstructions2()}
           >
             What?
           </a>

@@ -6,7 +6,8 @@ import * as actions from '../actions';
 const initialState = {
   answer: Math.floor(Math.random() * Math.floor(100)),
   guessList: [],
-  response: 'Make your guess!'
+  response: 'Make your guess!',
+  instructions: false
 }
 
 
@@ -34,7 +35,8 @@ export const gameReducer = (state=initialState, action) => {
         ...state.guessList, 
         action.guess
         ],
-      response
+      response,
+      instructions: false
     }
   }
 
@@ -43,7 +45,22 @@ export const gameReducer = (state=initialState, action) => {
     return {
       answer: Math.floor(Math.random() * Math.floor(100)),
       guessList: [],
-      response: 'Make your guess!'
+      response: 'Make your guess!',
+      instructions: false
+    }
+  }
+
+  if (action.type === actions.SHOW_INSTRUCTIONS) {
+    return {
+      ...state,
+      instructions: true
+    }
+  }
+
+  if (action.type === actions.HIDE_INSTRUCTIONS) {
+    return {
+      ...state,
+      instructions: false
     }
   }
 

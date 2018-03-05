@@ -10,14 +10,14 @@ export default function Header(props) {
   /**
    props:
     - newGame={() => props.dispatch(actions.createNewGame())}
-    - noInstructions={() => this.noInstructions()}
+    - showInstructions={() => props.dispatch(actions.showInstructions())}
    */
 
   return (
     <header>
       <TopNav 
         newGame2={() => props.newGame()}
-        noInstructions2={() => props.noInstructions()}
+        showInstructions2={() => props.showInstructions()}
       />
       {/* <InfoModal /> */}
       <h1>HOT or COLD</h1>
