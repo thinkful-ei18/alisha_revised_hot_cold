@@ -5,7 +5,7 @@ import './guess-list.css';
 export default function GuessList(props) {
     /*
     props:
-        - guesses={this.state.guessList}
+        - guesses={props.guessList}
     */
     
     const guesses = props.guesses.map((guess, index) => (

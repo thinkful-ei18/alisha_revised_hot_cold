@@ -105,9 +105,9 @@ export function Game(props) {
           count={props.guessList.length}
         />
 
-        {/* <GuessList 
-          guesses={() => {}} 
-        /> */}
+        <GuessList 
+          guesses={props.guessList} 
+        />
 
       </div>
     );
