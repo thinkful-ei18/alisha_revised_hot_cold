@@ -5,7 +5,7 @@ import './info-modal.css';
 export default function InfoModal(props) {
   /**
      props:
-      - showGame={() => this.showGame()}
+      - hideInstructions={() => props.dispatch(actions.hideInstructions())}
     */
   
     return (
@@ -26,7 +26,7 @@ export default function InfoModal(props) {
               <a 
                 className="close" 
                 href="#"
-                onClick={() => props.showGame()}
+                onClick={() => props.hideInstructions()}
               >
                 Got It!
               </a>
